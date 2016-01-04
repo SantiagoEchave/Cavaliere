@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Colecciones quince a&ntilde;os :: Cavaliere Haute Couture :: Dise&ntilde;o de indumentaria de alta costura</title>
+        <meta name="description" content="Vestidos para fiestas de quince. Conozca nuestros modelos.">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+        <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+
+        <script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.3"></script>
+        <link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.2" media="screen" />
+        <!-- Add Button helper (this is optional) -->
+        <link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+        <script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+        <!-- Add Media helper (this is optional) -->
+        <script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
+
+
+        <link href='http://fonts.googleapis.com/css?family=Andika' rel='stylesheet' type='text/css'>
+
+
+        <link href="estilo/css-cavaliere.css" type="text/css" rel="stylesheet">
+
+
+
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                /*
+       *  Simple image gallery. Uses default settings
+       */
+
+                $('.fancybox').fancybox();
+
+                /*
+       *  Different effects
+       */
+
+                // Change title type, overlay closing speed
+                $(".fancybox-effects-a").fancybox({
+                    helpers: {
+                        title : {
+                            type : 'outside'
+                        },
+                        overlay : {
+                            speedOut : 0
+                        }
+                    }
+                });
+
+                // Disable opening and closing animations, change title type
+                $(".fancybox-effects-b").fancybox({
+                    openEffect  : 'none',
+                    closeEffect : 'none',
+
+                    helpers : {
+                        title : {
+                            type : 'over'
+                        }
+                    }
+                });
+
+                // Set custom style, close if clicked, change title type and overlay color
+                $(".fancybox-effects-c").fancybox({
+                    wrapCSS    : 'fancybox-custom',
+                    closeClick : true,
+
+                    openEffect : 'none',
+
+                    helpers : {
+                        title : {
+                            type : 'inside'
+                        },
+                        overlay : {
+                            css : {
+                                'background' : 'rgba(238,238,238,0.90)'
+                            }
+                        }
+                    }
+                });
+
+                // Remove padding, set opening and closing animations, close if clicked and disable overlay
+                $(".fancybox-effects-d").fancybox({
+                    padding: 0,
+
+                    openEffect : 'elastic',
+                    openSpeed  : 150,
+
+                    closeEffect : 'elastic',
+                    closeSpeed  : 150,
+
+                    closeClick : true,
+
+                    helpers : {
+                        overlay : null
+                    }
+                });
+
+                /*
+       *  Button helper. Disable animations, hide close button, change title type and content
+       */
+
+                $('.fancybox-buttons').fancybox({
+                    openEffect  : 'none',
+                    closeEffect : 'none',
+
+                    prevEffect : 'none',
+                    nextEffect : 'none',
+
+                    closeBtn  : false,
+
+                    helpers : {
+                        title : {
+                            type : 'inside'
+                        },
+                        buttons : {}
+                    },
+
+                    afterLoad : function() {
+                        this.title = (this.index + 1) + ' de ' + this.group.length + (this.title ? ' - ' + this.title : '');
+                    }
+                });
+
+
+                /*
+       *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+       */
+
+                $('.fancybox-thumbs').fancybox({
+                    prevEffect : 'none',
+                    nextEffect : 'none',
+
+                    closeBtn  : false,
+                    arrows    : false,
+                    nextClick : true,
+
+                    helpers : {
+                        thumbs : {
+                            width  : 50,
+                            height : 50
+                        }
+                    }
+                });
+
+                /*
+       *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+      */
+                $('.fancybox-media')
+                    .attr('rel', 'media-gallery')
+                    .fancybox({
+                    openEffect : 'none',
+                    closeEffect : 'none',
+                    prevEffect : 'none',
+                    nextEffect : 'none',
+
+                    arrows : false,
+                    helpers : {
+                        media : {},
+                        buttons : {}
+                    }
+                });
+
+                /*
+       *  Open manually
+       */
+
+                $("#fancybox-manual-a").click(function() {
+                    $.fancybox.open('1_b.jpg');
+                });
+
+                $("#fancybox-manual-b").click(function() {
+                    $.fancybox.open({
+                        href : 'iframe.html',
+                        type : 'iframe',
+                        padding : 5
+                    });
+                });
+
+                $("#fancybox-manual-c").click(function() {
+                    $.fancybox.open([
+                        {
+                            href : '1_b.jpg',
+                            title : 'My title'
+                        }, {
+                            href : '2_b.jpg',
+                            title : '2nd title'
+                        }, {
+                            href : '3_b.jpg'
+                        }
+                    ], {
+                        helpers : {
+                            thumbs : {
+                                width: 75,
+                                height: 50
+                            }
+                        }
+                    });
+                });
+
+
+            });
+        </script>
+        <style type="text/css">
+            .fancybox-custom .fancybox-skin {
+                box-shadow: 0 0 50px #222;
+            }
+        </style>
+
+
+
+
+
+
+
+
+
+    </head>
+
+    <body>
+        <div class="encabezado">
+            <div class="contenido">
+                <h1 class="logo">
+                    <a href="http://cavalierehc.com.ar/" title="Vuelve al men&uacute; inicial" rel="Canonical"><img src="http://cavalierehc.com.ar/web/images/logo-cavalierehc.png" width="213" height="98" alt="Cavaliere Haute Coature - dise&ntilde;o de alta costura" />
+                    </a>
+                </h1>
+
+                <div class="nav-wrap">
+                    <img style="float:right; margin-right:-2px; margin-top:6px;" src="img/linea-superior-menu.jpg" width="683px" height="1px" />
+                    <ul class="group" id="example-one">
+                        <li><a href="index.html" title="Regresaa la pantalla principal">Home</a></li>                    
+                        <li><a href="institucional.html" title="Qui&eacute;nes somos?">Institucional</a></li>                    
+                        <li class="current_page_item"><a href="colecciones.html" title="Conoce las colecciones de Cavaliere HC">Colecciones</a></li>                    
+                        <li><a href="campana.html" title="Lee las publicaciones de Cavaliere HC">Campa&ntilde;a</a></li>
+                        <li><a href="http://cavalierehc.wordpress.com/" title="Lee las novedades de Cavaliere HC">Prensa</a></li>                    
+                        <li><a href="datos-utiles.html" title="Aprende a cuidar tu vestido">Datos &uacute;tiles</a></li>                    
+                        <li><a href="contacto.html" title="Cont&aacute;ctate con Cavaliere HC">Contacto</a></li>
+                    </ul>
+
+                </div> <!-- cierra nav-wrap-->
+                <div style="clear:both"></div>   
+            </div>
+        </div>
+        <!--Cierra div encabezado -->
+
+        <div class="contenido">
+
+            <div class="informacion-vestidos">
+                <h1>Fiestas de Quince</h1>
+                <h2>Colección 2016<br/><br/>
+                    <span style="font-style:italic">Ver otros modelos:</span></h2>
+                <ul>
+
+                    <li><a href="2016_15_01.html" title="Modelos para fiestas de quince"><img src="img/camp_2016/15/01_01.jpg" alt="Opciones para vestidos de quince" style="object-fit: cover;  object-position: -50% 0%"/></a></li>
+                    <li><a href="2016_15_02.html" title="Modelos para fiestas de quince"><img src="img/camp_2016/15/02_01.jpg" alt="Opciones para vestidos de quince" style="object-fit: cover;  object-position: -50% 0%"/></a></li>
+                    <li><a href="2016_15_03.html" title="Modelos para fiestas de quince"><img src="img/camp_2016/15/03_01.jpg"  alt="Opciones para vestidos de quince" style="object-fit: cover;  object-position: -50% 0%"/></a></li>
+                    <li><a href="2016_15_04.html" title="Modelos para fiestas de quince"><img src="img/camp_2016/15/04_01.jpg" alt="Opciones para vestidos de quince" style="object-fit: cover;  object-position: -50% 0%"/></a></li>
+                    <li><a href="2016_15_05.html" title="Modelos para fiestas de quince"><img src="img/camp_2016/15/05_01.jpg"  alt="Opciones para vestidos de quince" style="object-fit: cover; object-position: -50% 0%"/></a></li>
+                </ul>
+                <div style="clear:both"></div>
+
+                <div class="mas-colecciones">
+                    <h3>M&aacute;s colecciones</h3>
+                    <ul>
+                        <li><a href="quince-1.html" title="Modelos para fiestas de quince" style="text-decoration:underline; font-style:italic;">Quince a&ntilde;os</a></li>
+                        <div style="clear:both"></div>
+                        <li><a href="noche-1.html" title="Modelos de noche">Noche</a></li>
+                        <div style="clear:both"></div>
+                        <li><a href="cortejos-1.html" title="Modelos para cotejos">Cortejo</a></li>
+                        <div style="clear:both"></div>
+                        <li><a href="novias-1.html" title="Modelos para novias">Novias</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+
+            <div class="fotos-vestidos">
+                <a class="fancybox-buttons" data-fancybox-group="button" href="img/camp_2016/15/01_01.jpg"><img src="img/camp_2016/15/01_01.jpg" width="336" height="505" alt="Fotos de quince" /></a>
+                <div class="mas-fotos">
+                   
+                    <div style="clear:both"></div>
+                    <a class="fancybox-buttons" data-fancybox-group="button" href="img/camp_2016/15/02_01.jpg"></a>
+                    <div style="clear:both"></div>
+                    <a class="fancybox-buttons" data-fancybox-group="button" href="img/camp_2016/15/02_02.jpg"></a>
+                    <a class="fancybox-buttons" data-fancybox-group="button" href="img/camp_2016/15/03_01.jpg"></a>
+                    <a class="fancybox-buttons" data-fancybox-group="button" href="img/camp_2016/15/03_02.jpg"></a>
+                    <a class="fancybox-buttons" data-fancybox-group="button" href="img/camp_2016/15/04_01.jpg"></a>
+                    <a class="fancybox-buttons" data-fancybox-group="button" href="img/camp_2016/15/04_02.jpg"></a>
+                    <a class="fancybox-buttons" data-fancybox-group="button" href="img/camp_2016/15/05_01.jpg"></a>
+                    <a class="fancybox-buttons" data-fancybox-group="button" href="img/camp_2016/15/05_02.jpg"></a>
+                    <a class="fancybox-buttons" data-fancybox-group="button" href="img/camp_2016/15/05_03.jpg"></a>
+                </div>
+            </div>
+
+
+
+
+        </div> <!-- Cierra div contenido-->
+
+
+
+
+        <div class="linea-footer">
+            <img src="img/barra-inferior-colecciones-2.jpg" />
+        </div>
+
+        <div class="footer">
+            <!--<img src="img/borde-inferior-institucional.jpg" width="960" height="13" alt="linea inferior Cavaliere" />-->
+            <h6>&copy; Todos los derechos reservados - Cavaliere Haute Couture 2013</h6>
+            <ul>
+                <li><a href="index.html" title="Regresa a la pantalla principal">Home</a></li>
+                <li>-</li>
+                <li><a href="contacto.html" title="Envia tu consulta">Contacto</a></li> 
+                <li>-</li>
+                <li><a href="colecciones.html" title="Hecha un vistazo a las temporadas">Colecciones</a></li>
+            </ul>
+        </div> <!-- cierra footer -->
+
+
+
+
+
+    </body>
+</html>
